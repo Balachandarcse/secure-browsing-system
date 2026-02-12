@@ -1,0 +1,23 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+.env/
+.dockerignore
+# Model & datasets (generated artifacts)
+*.csv
+my_expirience.txt
+# OS files
+.DS_Store
+Thumbs.db
+
+# Docker
+*.log
+
+# IDE
+.vscode/
+.idea/

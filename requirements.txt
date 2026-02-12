@@ -1,0 +1,7 @@
+pandas
+tldextract
+requests
+scikit-learn
+joblib
+fastapi
+uvicorn

@@ -1,0 +1,20 @@
+[
+  "url_length",
+  "hostname_length",
+  "path_length",
+  "dot_count",
+  "hyphen_count",
+  "underscore_count",
+  "slash_count",
+  "question_count",
+  "equal_count",
+  "at_count",
+  "amp_count",
+  "subdomain_count",
+  "url_depth",
+  "has_ip",
+  "is_shortened",
+  "digit_letter_mix",
+  "suspicious_tld",
+  "domain_entropy"
+]
