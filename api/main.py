@@ -14,9 +14,9 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"], 
-    allow_credentials=True,
-    allow_methods=["*"],   
+    allow_origins=["*"],
+    allow_credentials=False,
+    allow_methods=["*"],
     allow_headers=["*"],
 )
 
@@ -50,9 +50,6 @@ def is_shortened(url: str) -> bool:
     domain = urlparse(url).netloc
     return domain in SHORTENER_DOMAINS
 
-@app.options("/predict")
-async def options_predict():
-    return JSONResponse(content={"message": "OK"})
 
 @app.post("/predict")
 def predict_url(data: URLRequest):
