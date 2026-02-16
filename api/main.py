@@ -7,6 +7,8 @@ import numpy as np
 import requests
 from urllib.parse import urlparse
 from url_pipeline.feature_extractor import extract_features
+from fastapi import Request
+from fastapi.responses import JSONResponse
 
 app = FastAPI()
 
@@ -48,6 +50,9 @@ def is_shortened(url: str) -> bool:
     domain = urlparse(url).netloc
     return domain in SHORTENER_DOMAINS
 
+@app.options("/predict")
+async def options_predict():
+    return JSONResponse(content={"message": "OK"})
 
 @app.post("/predict")
 def predict_url(data: URLRequest):
