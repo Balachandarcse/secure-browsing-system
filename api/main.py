@@ -9,6 +9,22 @@ from urllib.parse import urlparse
 from url_pipeline.feature_extractor import extract_features
 
 app = FastAPI()
+from fastapi.middleware.cors import CORSMiddleware
+
+origins = [
+    "chrome-extension://*",
+    "https://www.google.com",
+    "https://search.brave.com"
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # for development
+    allow_credentials=True,
+    allow_methods=["POST", "OPTIONS"],
+    allow_headers=["*"],
+)
+
 
 model = joblib.load("/app/dataset/url_model.pkl")
 
